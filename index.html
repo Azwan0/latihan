@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pembelian Buku Duniailkom</title>
+    <style>
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 50%;
+        }
+        td {
+            padding: 8px;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Pembelian Buku Duniailkom</h2>
+    <form action="proses_pembelian.php" method="POST">
+        <table border="1">
+            <tr>
+                <td>Nama:</td>
+                <td><input type="text" name="nama" required></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" name="email" required></td>
+            </tr>
+            <tr>
+                <td>Jenis Buku:</td>
+                <td>
+                    <select name="jenis_buku" required>
+                        <option value="HTML Uncover">HTML Uncover</option>
+                        <option value="CSS Dasar">CSS Dasar</option>
+                        <option value="JavaScript Lanjutan">JavaScript Lanjutan</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Jumlah Buku:</td>
+                <td><input type="number" name="jumlah_buku" min="1" required></td>
+            </tr>
+            <tr>
+                <td>Alamat Pengiriman:</td>
+                <td><textarea name="alamat_pengiriman" rows="3" required></textarea></td>
+            </tr>
+            <tr>
+                <td>Kurir Pengiriman:</td>
+                <td>
+                    <input type="radio" name="kurir" value="POS" required> POS
+                    <input type="radio" name="kurir" value="JNE" required> JNE
+                    <input type="radio" name="kurir" value="TIKI" required> TIKI
+                </td>
+            </tr>
+            <tr>
+                <td>Ongkos Kirim:</td>
+                <td>
+                    <select name="ongkos_kirim" required>
+                        <option value="5000">Rp 5,000</option>
+                        <option value="10000">Rp 10,000</option>
+                        <option value="15000">Rp 15,000</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Tanggal Dikirim:</td>
+                <td><input type="date" name="tanggal_dikirim" required></td>
+            </tr>
+            <tr>
+                <td>Tambahan:</td>
+                <td>
+                    <input type="checkbox" name="tambahan[]" value="DVD eBook"> DVD eBook
+                    <input type="checkbox" name="tambahan[]" value="Bungkus Kado"> Bungkus Kado
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button type="submit">Pesan Buku</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
